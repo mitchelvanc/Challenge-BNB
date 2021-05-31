@@ -1,8 +1,8 @@
 .head {
   margin: 0;
   padding: 0;
-  background-color: #bbb;
-  
+  background-color: rgb(54, 52, 52);
+  color: #fff;
 
 }
 
@@ -42,7 +42,7 @@
   }
   
   .flip-card-back {
-    background-color: #2980b9;
+    background-color: rgb(54, 52, 52);
     color: white;
     transform: rotateY(180deg);
   }
