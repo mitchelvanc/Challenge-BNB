@@ -1,6 +1,8 @@
 <?php
 // Je hebt een database nodig om dit bestand te gebruiken....
 
+include "database.php";
+
 if (!isset($db_conn)) { //deze if-statement checked of er een database-object aanwezig is. Kun je laten staan.
     return;
 }
@@ -9,7 +11,7 @@ $database_gegevens = null;
 $poolIsChecked = false;
 $bathIsChecked = false;
 
-$sql = ""; //Selecteer alle huisjes uit de database
+$sql = "Select * FROM homes"; //Selecteer alle huisjes uit de database
 
 if (isset($_GET['filter_submit'])) {
 
@@ -32,6 +34,7 @@ if (is_object($db_conn->query($sql))) { //deze if-statement controleert of een s
 }
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -50,8 +53,88 @@ if (is_object($db_conn->query($sql))) { //deze if-statement controleert of een s
 
 <body>
     <header>
-        <h1>Quattro Cottage Rental</h1>
+       <div class="head"> <h1>Quattro Cottage Rental</h1></div>
     </header>
+    <main>
+    <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="images/Ijmuiden.jpg" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+    <?php   echo "<h1>".$database_gegevens[0]['name']."</h1>";
+            echo $database_gegevens[0]['description'];
+            
+       
+           ?> 
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="images/Assen.jpg" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back"> 
+      <?php  echo "<h1>".$database_gegevens[1]['name']."</h1>";
+        
+            
+            echo $database_gegevens[1]['description'];
+           
+             
+             
+      
+           ?>   
+      <p><b>Kenmerken</b><br>
+            er is een zwembad!</p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="images/Espelo.jpg" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <?php echo "<h1>".$database_gegevens[2]['name']."</h1>";
+        
+            
+            echo $database_gegevens[2]['description'];
+           
+             
+             
+      
+           ?>   
+      <p><b>Kenmerken</b><br>
+            er is een zwembad!</p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="images/Weustenrade.jpg" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <?php  echo "<h1>".$database_gegevens[3]['name']."</h1>";
+        
+            
+            echo $database_gegevens[3]['description'];
+           
+             
+             
+      
+           ?>   
+      <p><b>Kenmerken</b><br>
+            er is een zwembad!</p>
+    </div>
+  </div>
+</div>
+</main>
+
     <main>
         <div class="left">
             <div id="mapid"></div>
@@ -104,7 +187,7 @@ if (is_object($db_conn->query($sql))) { //deze if-statement controleert of een s
                     </div>
                     <button type="submit" name="filter_submit">Filter</button>
                 </form>
-                <div class="homes-box">
+                <!--<div class="homes-box">
                     <?php if (isset($database_gegevens) && $database_gegevens != null) : ?>
                         <?php foreach ($database_gegevens as $huisje) : ?>
                             <h4>
@@ -139,7 +222,7 @@ if (is_object($db_conn->query($sql))) { //deze if-statement controleert of een s
                     <?php endif; ?>
                 </div>
 
-            </div>
+            </div> -->
         </div>
     </main>
     <footer>
@@ -152,7 +235,7 @@ if (is_object($db_conn->query($sql))) { //deze if-statement controleert of een s
     <script>
         // De verschillende markers moeten geplaatst worden. Vul de longitudes en latitudes uit de database hierin
         var coordinates = [
-
+            
 
         ];
 
