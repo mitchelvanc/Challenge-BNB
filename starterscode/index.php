@@ -235,16 +235,23 @@ if (is_object($db_conn->query($sql))) { //deze if-statement controleert of een s
     <script>
         // De verschillende markers moeten geplaatst worden. Vul de longitudes en latitudes uit de database hierin
         var coordinates = [
-            
-
+            ['52.44902','4.61001'],
+            ['52.99864','6.64928'],
+            ['52.30340','6.36800'],
+            ['50.89720','5.90979'],
         ];
 
         var bubbleTexts = [
-
-
+            "<h2>IJmuiden Cottage</h2> <img src=images/Ijmuiden.jpg width=100% height=100%>",
+            "<h2>Assen</h2> <img src=images/Assen.jpg width=100% height=100%>",
+            "<h2>Espelo</h2> <img src=images/Espelo.jpg width=100% height=100%>",
+            "<h2>Weustenrade</h2> <img src=images/Weustenrade.jpg width=100% height=100%>"
         ];
     </script>
     <script src="js/place_markers.js"></script>
 </body>
 
 </html>
+
+
+
