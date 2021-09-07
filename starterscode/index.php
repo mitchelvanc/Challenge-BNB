@@ -1,6 +1,6 @@
 <?php 
-include "inc/database.php";
-include "inc/filter.php";
+    include "inc/database.php";
+    include "inc/filter.php";
 ?>
 
 <!DOCTYPE html>
@@ -144,6 +144,12 @@ include "inc/filter.php";
                         ];
                 </script>
             <script src="js/place_markers.js"></script>
+
+            <footer>
+                <div></div>
+                <div>copyright Quattro Rentals BV.</div>
+                <div></div>
+            </footer>
 </body>
 </html>
 

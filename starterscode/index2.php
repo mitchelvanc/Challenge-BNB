@@ -14,12 +14,7 @@
 
     </main>
 
-    <footer>
-        <div></div>
-        <div>copyright Quattro Rentals BV.</div>
-        <div></div>
-
-    </footer>
+    
     
 
 </html>
